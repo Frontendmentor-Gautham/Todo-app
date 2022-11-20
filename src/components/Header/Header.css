@@ -1,0 +1,55 @@
+header{
+    height: 40vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.light-mode{
+    background-image: url('/src/images/bg-desktop-light.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.dark-mode{
+    background-image: url('/src/images/bg-desktop-dark.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.header-heading{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header-heading h1{
+    color: #fff;
+    letter-spacing: 10px;
+}
+
+.header-content{
+    width: 650px;
+}
+
+.text-input-light{
+    margin-top: 40px;
+    width: 650px;
+    padding: 10px;
+    border: none;
+}
+
+.text-input-dark{
+    margin-top: 40px;
+    width: 650px;
+    padding: 10px;
+    border: none;
+    background-color: hsl(237, 14%, 26%);
+}
+
+
+
+.moon-icon{
+    cursor: pointer;
+}
