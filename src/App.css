@@ -19,3 +19,71 @@ body{
 .dark{
     background-color: hsl(235, 21%, 11%);
 }
+
+header{
+    height: 40vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.light-mode{
+    background-image: url('/src/images/bg-desktop-light.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.dark-mode{
+    background-image: url('/src/images/bg-desktop-dark.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.header-heading{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header-heading h1{
+    color: #fff;
+    letter-spacing: 10px;
+}
+
+.header-content{
+    width: 650px;
+}
+
+
+img{
+    cursor: pointer;
+}
+
+.moon-dark{
+    display: none;
+}
+
+.sun-light{
+    display: none;
+}
+
+.todo-list{
+    margin-top: -50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.list-light{
+    background-color: hsl(233, 11%, 84%);
+    width: 585px;
+    margin-right: 60px;
+}
+
+.list-dark{
+    background-color: hsl(237, 14%, 26%);
+    color: #fff;
+    width: 585px;
+    margin-right: 60px;
+}

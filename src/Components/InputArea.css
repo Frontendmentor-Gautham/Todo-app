@@ -1,0 +1,39 @@
+.text-input-light{
+    margin-top: 40px;
+    width: 650px;
+    padding: 10px;
+    border: none;
+    background-color: hsl(233, 11%, 84%);
+}
+
+.text-input-dark{
+    margin-top: 40px;
+    color: #fff;
+    width: 650px;
+    padding: 10px;
+    border: none;
+    background-color: hsl(237, 14%, 26%);
+}
+
+.btn-light{
+    color: #000;
+}
+
+.btn-dark{
+    color: #fff;
+}
+
+.form{
+    display: flex;
+    flex-direction: row;    
+    align-items: center;
+}
+
+button{
+    padding: 10px 15px;
+    margin-top: 40px;
+    margin-left: 10px;
+    background-color: rgb(99, 202, 15);
+    border: none;
+    letter-spacing: 1px;
+}
