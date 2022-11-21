@@ -1,12 +1,24 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import './TodoItem.css'
 import cross from '../images/icon-cross.svg'
-import check from '../images/icon-check.svg'
 
 const TodoItem = (props) => {
+
+    const [isChecked,setIsChecked] = useState(false);
+
+    function checkingBox(){
+        if (isChecked === 'false') {
+            setIsChecked('true');
+          } else {
+            setIsChecked('false');
+          }
+    }
+
+    
+
   return (
     <div>
-      <li> {props.text}   <img
+      <li> <input className={`${isChecked}-state`} onClick={checkingBox} type="radio"/> {props.text}   <img
         onClick={() => {
             props.onChecked(props.id);
         }}
