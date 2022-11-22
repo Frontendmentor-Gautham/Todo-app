@@ -7,8 +7,19 @@ li{
     text-align: justify;
 }
 
-.false-state{
-    padding: 40px;
-    height: 50px;
+.checker{
+    width: 20px;
     border-radius: 50%;
+    border: none;
+    cursor: pointer;
+}
+
+
+.true-state{
+    background-image: linear-gradient(hsl(192, 100%, 67%),hsl(280, 87%, 65%));
+}
+
+.true{
+    text-decoration: line-through;
+    opacity: 0.3;
 }

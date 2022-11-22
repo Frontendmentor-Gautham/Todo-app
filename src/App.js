@@ -6,6 +6,7 @@ import sun from './images/icon-sun.svg';
 import InputArea from './Components/InputArea';
 import TodoItem from './Components/TodoItem';
 import { useEffect, useState } from 'react';
+import { DragDropContext, Droppable , Draggable } from 'react-beautiful-dnd';
 
 
 
@@ -14,7 +15,7 @@ function App() {
 
   const [mode,setMode] = useState('light');
   const [items, setItems] = useState([]);
-
+  const [completedTodos,setCompletedTodos] = useState([]);
 
   function AddItem(inputText) {
     setItems(prevItems => {
@@ -51,30 +52,48 @@ function App() {
 
   return (
     <>
+
+
       <header className={`${mode}-mode`}>
-      <div className='header-content'>
-        <div className='header-heading'>
-            <h1>TODO</h1>
-            <img onClick={toggleMode} className={`moon-${mode}`} src={moon} alt='moon icon'></img>
-            <img onClick={toggleMode} className={`sun-${mode}`} src={sun} alt='sun icon'></img>
-            
+        <div className='header-content'>
+          <div className='header-heading'>
+              <h1>TODO</h1>
+              <img onClick={toggleMode} className={`moon-${mode}`} src={moon} alt='moon icon'></img>
+              <img onClick={toggleMode} className={`sun-${mode}`} src={sun} alt='sun icon'></img>
+              
+          </div>
+          <InputArea mode ={mode} onAdd ={AddItem}/>
         </div>
-        <InputArea mode ={mode} onAdd ={AddItem}/>
-      </div>
-    </header>
+      </header>
 
     <section>
       <div className='todo-list'>
-        <ul className={`list-${mode}`}>
-          {items.map((todoItem, index) => (
-            <TodoItem
-              key={index}
-              id={index}
-              text={todoItem}
-              onChecked={deleteItem}
-            />
-          ))}
-        </ul>
+        <DragDropContext>
+          <Droppable droppableId="todos">
+             {
+              (provided)=>(
+                  <ul className={`list-${mode} todos`} ref={provided.innerRef} {...provided.droppableProps}>
+                {items.map((todoItem, index) => (
+                  <Draggable draggableId="todos" index={index}>
+                    {
+                      (provided) => (
+                          <TodoItem
+                          ref={provided.innerRef} {...provided.draggableProps} {...provided.dragHandleProps}
+                        index={index}
+                        key={index}
+                        id={index}
+                        text={todoItem}
+                        onChecked={deleteItem}
+                        />
+                      )
+                    }
+                  </Draggable>
+                ))}
+              </ul>
+              )
+             }  
+          </Droppable>
+        </DragDropContext>
       </div>
     </section>
     </>

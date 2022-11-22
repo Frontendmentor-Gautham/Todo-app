@@ -14,7 +14,7 @@ const InputArea = ({mode,onAdd}) => {
   return (
     <div className="form">
       <input placeholder='Enter a Todo' className={`text-input-${mode}`} onChange={handleChange} type="text" value={inputText} />
-      <button className={`btn-${mode}`}
+      <button className={`btn-${mode} btn`}
         onClick={() => {
           onAdd(inputText);
           setInputText("");
