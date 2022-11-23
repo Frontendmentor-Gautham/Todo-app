@@ -106,12 +106,12 @@ img{
     }
 
     .header-content{
-        max-width: 450px;
+        max-width: 350px;
     }
 
     .todo-list{
         margin-top: -50px;
-        max-width: 450px;
-        margin-left: 25px;
+        max-width: 350px;
+        margin-left: 40px;
     }
 }

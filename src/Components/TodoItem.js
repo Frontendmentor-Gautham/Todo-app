@@ -18,21 +18,14 @@ const TodoItem = (props) => {
     
 
   return (
-    <Draggable draggableId={props.id} index={props.index}>
-      {
-        (provided) => (
-          <div>
+    <div>
             <li 
-            ref={provided.innerRef} {...provided.draggableProps} {...provided.dragHandleProps}
             className={`${isChecked}`}> <button onClick={checkingBox} className={`${isChecked}-state checker`} /> {props.text}   <img
               onClick={() => {
                   props.onChecked(props.id);
               }}
             src={cross} /></li>
            </div>
-        )
-      }
-    </Draggable>
   )
 }
 
